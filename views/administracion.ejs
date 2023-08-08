@@ -1,0 +1,59 @@
+<main class="contenedor panel-administracion">
+    <h1><%= pagina %></h1>
+    <div class="contenedor-botones">
+        <a href="/nuevaTarea" class="btn btn-azul">Nueva Tarea</a>
+        <a href="/editarPerfil" class="btn btn-amarillo">Editar Perfil</a>
+        <a href="/cambiarPassword" class="btn btn-azul2">Cambiar Contraseña</a>
+    </div>
+    <div class="seccion-admin">
+        
+        <% if (!tareas.length) { %>
+            <h2>No tienes tareas pendientes</h2>
+        <% }else{ %>
+            <h2>Tus Tareas</h2>
+            <ul>
+                <% moment.locale("es"); %>
+                <% tareas.forEach(tarea => { %>
+                <% fecha = tarea.fecha+" "+tarea.hora 
+                   fecha = moment(fecha).format('LLLL')%>
+                    <li>
+                        <div class="informacion-admin">
+                            <p class="fecha"><%= fecha  %>h</p>
+                            <h3><%= tarea.tarea %></h3>
+                        </div>
+                        <div class="acciones contenedor-botones">
+                            <a href=<%=`/editarTarea/${tarea.slug}`%> class="btn btn-rosa">Editar</a>
+                            <a href=<%=`/eliminarTarea/${tarea.slug}`%> class="btn btn-rojo" >Eliminar </a>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        <% }%>
+    </div> <!--Fin tareas-->
+    <div class="seccion-admin">
+        
+        <% if (!tareasAn.length) { %>
+            <h2>No tienes tareas finalizadas</h2>
+        <% }else{ %>
+            <h2>Tareas anteriores</h2>
+            <ul>
+                <% moment.locale("es"); %>
+                <% tareasAn.forEach(tareaAnt => { %>
+                <% fecha = tareaAnt.fecha+" "+tareaAnt.hora 
+                   fecha = moment(fecha).format('LLLL')%>
+                    <li>
+                        <div class="informacion-admin">
+                            <p class="fecha"><%= fecha  %>h</p>
+                            <h3><%= tareaAnt.tarea %></h3>
+                        </div>
+                        <div class="acciones contenedor-botones">
+                            <a href=<%=`/editarTarea/${tareaAnt.slug}`%> class="btn btn-rosa">Editar</a>
+                            <a href=<%=`/eliminarTarea/${tareaAnt.slug}`%> class="btn btn-rojo" >Eliminar </a>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        <% }%>
+    </div><!--Fin tareas anteriores-->
+
+</main>

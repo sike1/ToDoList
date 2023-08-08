@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoToList - <%= pagina %></title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Staatliches&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+<link href="/img/logo.ico" type="image/x-icon" rel="shortcut icon" />
+
+</head>
+<body>
+    <header class="site-header contenedor">
+        <a href=<%= !usuario.id ? "/" : "/administracion"  %>>
+            <img src="/img/logo.png" alt="logo DoToList">
+        </a>
+        <nav class="nav">
+            <% if (!usuario.id) { %>
+                <%- include ("partials/nav-noautorizado.ejs") %>
+            <% } else{ %>
+                <%- include ("partials/nav-autorizado.ejs") %>
+            <% } %>
+        </nav>
+    </header>
+
+    <% if(locals.mensajes){ %>
+        <% const categoria = Object.keys(locals.mensajes) %>
+        <% if(categoria.length){ %>
+            <% locals.mensajes[categoria].forEach(alerta => { %>
+                <div class="alertas">
+                    <p class="alerta <%= categoria %>"><%= alerta %></p>
+                </div>
+            <% }); %>
+        <% } %>
+    <% } %>
+    <%- body  %>
+
+</body>
+</html>

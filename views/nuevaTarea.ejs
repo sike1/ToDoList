@@ -1,0 +1,21 @@
+<main class="contenedor contenedor-formularios">
+    <h1><%= pagina %></h1>
+    <form action="/nuevaTarea" method="post" class="default-form">
+        <input type="hidden" name="_csrf" value= <%=csrfToken%>>
+        <div class="campo">
+            
+            <input type="text" name="tarea" placeholder="Tu tarea">
+        </div>
+        <div class="campo">
+            
+            <input type="date" name="fecha" >
+        </div>
+        <div class="campo">
+            
+            <input type="time" name="hora" >
+        </div>
+        <div class="campo enviar">
+            <input type="submit" value="Crear Tarea" class="btn btn-azul">
+        </div>
+    </form>
+</main>
