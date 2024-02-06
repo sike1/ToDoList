@@ -7,6 +7,9 @@ html {
 body {
     font-family: 'Raleway', sans-serif;
     color: #484349;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
 }
 h1,h2{
     font-family: 'Staatliches', cursive;
@@ -22,6 +25,9 @@ h3 {
     text-align: left;
     font-family: 'Raleway', sans-serif;
     font-size: 2rem;
+}
+h4{
+    text-align: center;
 }
 a {
     text-decoration: none;
@@ -150,7 +156,6 @@ p {
 .card .fecha,
 .informacion-admin .fecha {
     font-size: .8rem;
-    text-transform: capitalize;
 }
 .card p {
     margin: 0;
@@ -197,9 +202,11 @@ nav.nav a {
     display: inline-block;
 }
 nav.nav a:first-child {
-    color: #B8336A;
+    color: #ff0000b2;
+}
+
+nav.nav{
     font-weight: 700;
-    border-right: 1px solid #E6E6E6;
 }
 
 /** hero **/

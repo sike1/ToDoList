@@ -3,11 +3,10 @@ const enviarEmail = require("../helpers/email.js");
 
 const { generarJWT } = require("../helpers/tokens");
 const shortid = require("shortid");
-const { where } = require("sequelize");
 
 exports.formIniciarSesion = (req, res) => {
   res.render("iniciarSesion", {
-    pagina: "Iniciar Sesion",
+    pagina: "Iniciar Sesión",
     csrfToken: req.csrfToken(),
   });
 };

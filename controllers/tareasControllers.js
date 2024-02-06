@@ -1,7 +1,7 @@
 const Tareas = require("../models/Tareas")
 
 exports.formNuevaTarea = (req, res)=>{
-    res.render("nuevatarea",{
+    res.render("nuevaTarea",{
         pagina : "Nueva Tarea",
         csrfToken: req.csrfToken(),
         usuario:req.usuario
@@ -30,7 +30,7 @@ exports.crearTarea=async(req,res,next)=>{
 
     try {
 
-        const tareaNu = Tareas.create({
+        Tareas.create({
                 tarea,
                 fecha,
                 hora,

@@ -6,11 +6,10 @@
         <a href="/cambiarPassword" class="btn btn-azul2">Cambiar Contraseña</a>
     </div>
     <div class="seccion-admin">
-        
+        <h2>Tus Tareas</h2>
         <% if (!tareas.length) { %>
-            <h2>No tienes tareas pendientes</h2>
+            <h4>No tienes tareas pendientes</h4>
         <% }else{ %>
-            <h2>Tus Tareas</h2>
             <ul>
                 <% moment.locale("es"); %>
                 <% tareas.forEach(tarea => { %>
@@ -31,11 +30,11 @@
         <% }%>
     </div> <!--Fin tareas-->
     <div class="seccion-admin">
+        <h2>Tareas anteriores</h2>
         
         <% if (!tareasAn.length) { %>
-            <h2>No tienes tareas finalizadas</h2>
+            <h4>No tienes tareas finalizadas</h4>
         <% }else{ %>
-            <h2>Tareas anteriores</h2>
             <ul>
                 <% moment.locale("es"); %>
                 <% tareasAn.forEach(tareaAnt => { %>
