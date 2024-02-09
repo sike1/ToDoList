@@ -3,9 +3,9 @@
     <div class="informacion-usuario">
         <div class="imagen"> 
             <% if (usuario.imagen) { %>
-                <img src="/uploads/<%= usuario.imagen %>">
+                <img class="rounded-circle" src="/uploads/<%= usuario.imagen %>">
             <% }else{ %>
-                <img src="/img/no-avatar.png" width="15%">
+                <img class="rounded-circle" src="/img/no-avatar.png" width="15%">
             <% } %>
             
         </div>
@@ -17,7 +17,7 @@
         </div>
         <form action="/eliminarCuenta" method="post" class="default-form">
         <input type="hidden" name="_csrf" value= <%=csrfToken%>>
-            <input type="submit" class="btn btn-rojo" value="Eliminar Cuenta">
+            <input type="submit" class="btn btn-danger" value="Eliminar Cuenta">
         </form>
     </div><!--info usuario-->
 </main>
