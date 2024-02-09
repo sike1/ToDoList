@@ -86,29 +86,8 @@ p {
 }
 
 
-
-/** layout**/
-
-nav.nav a {
-    padding: 1rem;
-    display: inline-block;
-}
-nav.nav #nombre {
-    color: #ff0000b2;
-}
-
-nav.nav{
-    font-weight: 700;
-}
-
-
-
-
-
-
-
-
 /** Crear Cuenta **/
+
 main.contenedor-formularios {
     max-width: 900px;
     width:95%;
