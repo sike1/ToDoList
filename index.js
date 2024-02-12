@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const MemoryStore = require('memorystore')(session)
 const csrf = require("csurf");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
