@@ -45,6 +45,9 @@ app.use(express.static("public"));
 app.use(
   session({
     secret: process.env.SECRETO,
+    store: new MemoryStore({
+      checkPeriod: 86400000
+    }),
     key: process.env.KEY,
     resave: false,
     saveUninitialized: false,
@@ -56,7 +59,7 @@ app.use(flash());
 
 //Middleware (usuario logeado, flash messages)
 app.use((req, res, next) => {
-  res.locals.usuario = {...req.usuario} || null
+  res.locals.usuario = { ...req.usuario } || null
   res.locals.mensajes = req.flash();
   next();
 });
