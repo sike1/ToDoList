@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
-const MemoryStore = require('memorystore')(session)
 const csrf = require("csurf");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
 const expressValidator = require("express-validator")
+const MemoryStore = require('memorystore')(session)
 
 require("dotenv").config({ path: ".env" });
 const router = require("./routes/indexRoutes");
